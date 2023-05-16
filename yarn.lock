@@ -222,7 +222,7 @@
 
 "@loft-enterprise/client@https://github.com/loft-sh/loft-javascript-client":
   version "0.1.0"
-  resolved "https://github.com/loft-sh/loft-javascript-client#3dc86a2c1855269dd3b0d996cc0204941651c0d2"
+  resolved "https://github.com/loft-sh/loft-javascript-client#1d7b14ae4e8c338356b68e762985f70bccc0794a"
   dependencies:
     "@kubernetes/client-node" "0.15.1"
     js-cookie "3.0.1"
@@ -316,9 +316,9 @@
     minipass "*"
 
 "@types/node@*":
-  version "20.1.4"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.4.tgz#83f148d2d1f5fe6add4c53358ba00d97fc4cdb71"
-  integrity sha512-At4pvmIOki8yuwLtd7BNHl3CiWNbtclUbNtScGx4OHfBd4/oWoJC8KRCIxXwkdndzhxOsPXihrsOoydxBjlE9Q==
+  version "20.1.5"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.1.5.tgz#e94b604c67fc408f215fcbf3bd84d4743bf7f710"
+  integrity sha512-IvGD1CD/nego63ySR7vrAKEX3AJTcmrAN2kn+/sDNLi1Ff5kBzDeEdqWDplK+0HAEoLYej137Sk0cUU8OLOlMg==
 
 "@types/node@^10.12.0":
   version "10.17.60"
@@ -2442,10 +2442,10 @@ vue@^3.2.0:
     "@vue/server-renderer" "3.3.2"
     "@vue/shared" "3.3.2"
 
-vuetify@^3.0.0:
-  version "3.2.4"
-  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.2.4.tgz#e31e23305b23d2a08ccbb845e295ff07d4c1a71f"
-  integrity sha512-Lj3fXSTY/lLXpuzAM0n2B/9o7WKpHsqv2USanXyFVXbePsl9kx7XY4HPrMqTDEYRlY9AyMjF9ilTbkQ8IovPmQ==
+vuetify@^3.2.5:
+  version "3.2.5"
+  resolved "https://registry.yarnpkg.com/vuetify/-/vuetify-3.2.5.tgz#b37cb4d6decafd5be7b5c29346555d6161ea9972"
+  integrity sha512-HuLIydRkigGIfqDbwEjFw5LEtWCw8lV4K1isMv/7vAt8n5fns+8kKqVnktIQkfzSxQgPD6Lve/58j4dEKA/vTA==
 
 webfontloader@^1.0.0:
   version "1.6.28"

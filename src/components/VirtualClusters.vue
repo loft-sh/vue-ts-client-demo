@@ -1,17 +1,21 @@
 <template>
-  <v-container class="fill-height">
+  <v-container>
     <v-responsive class="d-flex align-center text-center fill-height">
       <v-list variant="tonal">
-        <v-list-subheader>Virtual Clusters: {{store.items.length}}</v-list-subheader>
-        <v-list-item v-for="vcluster in virtualClusters" :key="vcluster.metadata.name">
+        <v-list-subheader style="font-size: 24px; font-weight: bold;">Virtual Clusters: {{store.items.length}}</v-list-subheader>
+        <v-list-item v-for="vcluster in virtualClusters" :key="vcluster.metadata?.name">
           <v-list-item-title>
             <v-card prepend-icon="mdi-devices">
 
               <template v-slot:title>
                 <v-container>
                   <v-row>
-                    <v-col><span>{{ vcluster.metadata.name }}</span></v-col>
-                    <v-col><span v-if="vcluster.metadata.deletionTimestamp" style="color: darkorange">Terminating</span></v-col>
+                    <v-col style="text-align: left;"><span>{{ vcluster.metadata?.name + " (Project: " + vcluster.metadata?.namespace?.substring(7) + ")" }}</span></v-col>
+                    <v-col>
+                      <span v-if="vcluster.metadata?.deletionTimestamp" style="color: darkorange">Terminating</span>
+                      <span v-if="vcluster.status?.phase==='Sleeping'" style="color: orange">Sleeping</span>
+                      <span v-if="vcluster.status?.phase==='Ready' && !vcluster.metadata?.deletionTimestamp" style="color: green">Ready</span>
+                    </v-col>
                   </v-row>
                 </v-container>
               </template>
@@ -28,6 +32,9 @@
       </v-list>
     </v-responsive>
   </v-container>
+  <div style="display: flex; justify-content: center;">
+    <v-btn @click="store.create()" >Create Virtual Cluster</v-btn>
+  </div>
 </template>
 
 <script lang="ts" setup>
@@ -35,14 +42,14 @@
   import {useVirtualClustersStore} from "@/store/virtualclusters";
 
   const store = useVirtualClustersStore();
-
   const virtualClusters = computed(() => {
     return store.items
   })
 
-  let interval: number
+  let interval: NodeJS.Timer
 
   onMounted(() => {
+    store.get()
     interval = setInterval(store.get, 3000)
   });
 
