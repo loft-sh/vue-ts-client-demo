@@ -5,7 +5,7 @@ import {Client, Resources} from "@loft-enterprise/client"
 import {ManagementV1VirtualClusterInstance} from "@loft-enterprise/client/gen/models/ManagementV1VirtualClusterInstance"
 import {ManagementV1VirtualClusterInstanceList} from "@loft-enterprise/client/gen/models/ManagementV1VirtualClusterInstanceList"
 
-export const client = new Client("P3iEHbiFaldvdFTZFRfB8iLhKbe24t4X3QKsk6zAyyRnUYlTkEhyiNWH83n5dyTE", "https://preview-environments.loft.rocks")
+export const client = new Client("my-access-key", "https://path-to-my-loft.com")
 
 export const useVirtualClustersStore = defineStore('virtualClusters', {
   state: () => ({
