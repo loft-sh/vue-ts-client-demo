@@ -4,9 +4,9 @@
 
 2. Start project via:
 ```
-# yarn
+# Install dependencies
 yarn
 
-# yarn
+# Start vue.js project
 yarn dev
 ```
